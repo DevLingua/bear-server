@@ -11,6 +11,7 @@ app.use(express.json());
 
 const FOURTHWALL_API = "https://storefront-api.fourthwall.com/v1";
 const STORE_TOKEN = process.env.FOURTHWALL_TOKEN;
+const PORT = process.env.PORT || 8080
 
 app.post("/api/create-cart", async (req, res) => {
   try {
@@ -72,6 +73,6 @@ app.post("/api/create-cart", async (req, res) => {
   }
 });
 
-app.listen(4000, () => {
-  console.log("✅ Server running on http://localhost:4000");
+app.listen(PORT, () => {
+  console.log(`✅ Server running on http://localhost:${PORT}`);
 });
